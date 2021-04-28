@@ -1,0 +1,27 @@
+  .modal__label {
+    color: var(--white);
+  }
+
+  .modal__btn {
+    fill: var(--white);
+    color: var(--white)
+  }
+
+  .modal__label__icon {
+    position: absolute;
+    top: 44px;
+    left: 350px;
+    background-color: transparent;
+  }
+
+  @media(max-width: 768px) {
+    .modal__label__icon {
+      left: 320px;
+    }
+  }
+
+
+
+  
+
+

@@ -1,0 +1,32 @@
+  .container__input {
+    height:  56px;
+    border-radius: var(--border-radius);
+    background-color: var(--input);
+    background-blend-mode: multiply;
+    padding-left: 24px;
+    border: 1px solid var(--border);
+    color: var(--white);
+  }
+
+    .container__input placeholder {
+      color: var(--white);
+    }
+
+  .container__label {
+    font: 'Opens Sans';
+    font-weight: 400
+  }
+
+  .container__input__lg {
+    width: 100%;
+  }
+
+  .container__input__sm {
+    width: 37rem;
+  }
+  
+  @media(max-width: 570px) {
+    .container__input__sm {
+      width: 100%;
+    }
+  }

@@ -1,0 +1,77 @@
+.box__first{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: sticky;
+}
+
+.box__second{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: sticky;
+}
+  @media(max-width: 768px) {
+    .box__second {
+      width: 100%;
+      margin: 0;
+      background-color: white;
+      gap: 0;
+      padding: 0; 
+      z-index: 1;
+    }
+  } 
+  
+  .box__icon {
+    color: var(--icon);
+  }
+  @media(min-width: 768px) {
+    .box__icon {
+     display: none
+    }
+  } 
+
+  .box__img {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+  }
+
+  .box__dot {
+    position: absolute;
+    right: 20px;
+    bottom: 45px;
+    width: 9.6px;
+    height: 9.6px;
+    
+    background: var(--yellow);
+    border-radius: 6px;
+  }
+
+  .box__button {
+    background-image: url("/assets/dashboard/bg.png");
+    background-size: cover;
+    width: 186px;
+    height: 34px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 11px;
+    font: 'Opens Sans'
+  }
+    @media(max-width: 768px) {
+      .box__button {
+        color: var(--purple);
+        background-color: transparent;
+        background-image: none
+      }
+    } 
+  
+  .box__button:hover {
+    filter: brightness(0.9);
+    color: var(--yellow);
+  }
+  
+  .box__button:active {
+    color: var(--yellow);
+    filter: brightness(0.8) 
+  }

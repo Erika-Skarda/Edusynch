@@ -1,0 +1,41 @@
+.radio{
+  color: var(--white);
+}
+
+.radio__label {
+  padding: 0 0 0 2rem;
+  position: relative;
+} */
+
+.radio__input[type=radio] {
+  position: absolute;
+  opacity: 0;
+} 
+
+input[type=radio] + .radio__label::before,
+input[type=radio] + .radio__label::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+input[type=radio] + .radio__label::before {
+  left: 0.5rem;
+  top: 0.2rem;
+  display: inline-block;
+  width: 1rem;
+  height: 0.8rem;
+  border: 0.05rem solid black;
+  background: var(--input);
+}
+
+input[type=radio]:checked + .radio__label::after {
+  left: 0.7rem;
+  top: 1rem;
+  border: 0.25rem solid yellow;
+}
+
+input[type=radio]:focus + .radio__label::before {
+  outline: 0.05rem dotted;
+} 
+

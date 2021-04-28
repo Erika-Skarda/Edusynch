@@ -1,0 +1,119 @@
+.container {
+  background-image: url("/assets/background.png");
+  background-size: cover;
+  height: 100vh;
+}
+
+.main {
+  background-image: url("/assets/background.png");
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+  .main__section {
+    padding-top: 5rem;
+    flex: 1;
+    gap: 3rem;
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    justify-items: start
+  }
+
+  /* @media(max-width: 768px) {
+    .main__section {
+      display: flex;
+      flex-direction: column-reverse;
+      flex-wrap: nowrap;
+      align-content: flex-start;
+      justify-content: space-evenly;
+      align-items: center
+    }   
+  } */
+
+    @media(max-width: 1110px) {
+      .main__section {
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: nowrap;
+        align-content: flex-start;
+        justify-content: space-evenly;
+        align-items: center
+      }
+    }
+
+  @media(max-width: 768px) {
+    .main__img {
+      display: none;
+    }
+  }
+
+  .main__img__mobile {
+    display: none;
+  }
+
+    @media(max-width: 768px) {
+      .main__img__mobile {
+        display: flex;
+      }
+    }
+
+  .main__div {
+    max-width: 100%;
+    padding-left: var(--gutterSm);
+    padding-right: var(--gutterSm);
+  }
+
+  .main__div__p {
+    color: var(--white);
+    margin-top: var(--gutterLg);
+    font-weight: 400;
+    font: 'Opens Sans';
+    font-size: 16px;
+  }
+    @media(max-width: 768px) {
+      .main__div__p {
+        display: none;  
+      }
+    }
+
+  .main__div__form {
+    margin-top: var(--gutterLg);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 14px;
+
+  }
+
+  .main__div__radio {
+    margin-top: var(--gutterSm); 
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+    @media(max-width: 570px) {
+      .main__div__radio {
+        display: flex;
+        flex-direction: column;
+      }
+    } 
+
+  .radio__p {
+    font-size: 14px
+  }
+    @media(max-width: 768px) {
+      .radio__p {
+        font-size: 11px
+      }
+    } 
+  
+  @media(max-width: 570px) {
+    .main__div__radio button {
+      margin-top: var(--gutterSm);
+    }
+  }
+
+    
+

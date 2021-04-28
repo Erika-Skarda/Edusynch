@@ -1,0 +1,39 @@
+.button {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+    color: var(--primary);
+    border-radius: 1.5px;
+    box-shadow: 1px 2px 1px  var(--box-shadow) ;
+    background-color: var(--yellow);
+    overflow: hidden;
+    transition: color 0.4s ease-in-out;
+}
+
+.button:hover {
+    filter: brightness(0.9)
+}
+
+.button:active {
+    filter: brightness(0.8) 
+}
+
+    .button__sm {
+        width: 165px;
+        height: 48px;
+    }
+
+    .button__lg {
+        width: 209px;
+        height: 56px;
+    }
+
+    @media(max-width: 570px) {
+        .button__lg {
+            width: 100%;
+            height: 56px;
+        }
+      } 
