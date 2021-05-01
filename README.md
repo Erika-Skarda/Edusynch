@@ -47,7 +47,7 @@ Uma página de onde é possível encontrar professores e estudantes.
 ## 🎊 Deploy
 
 <p align="justify">
-  O deploy do projeto foi realizado no vercel e encontra-se disponível em: 
+  O deploy do projeto foi realizado no vercel e encontra-se disponível em: https://edusynch.vercel.app/
 </p>
 
 ## Como rodar a aplicação :arrow_forward:
