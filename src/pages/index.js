@@ -1,9 +1,11 @@
-import { useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useState } from 'react'
+
 import NavBar from '../components/NavBar/NavBar.jsx'
 import Input from '../components/Input/Input.jsx'
 import ButtonComponent from '../components/Button/Button.jsx'
+
 import styles from '../styles/pages/Home.module.css'
 import {
   RadioGroup,

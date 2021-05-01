@@ -17,16 +17,22 @@ import {
   CloseIcon,
 } from '@chakra-ui/icons';
 
-const MenuItems = ({ children }) => (
-  <Text mt={{ base: 4, md: 0 }}  ml={5} display="block">
-    {children}
-  </Text>
-);
 
 export default function NavBar(props) {
-
+  
   const [show, setShow] = useState(false)
   const handleToggle = () => setShow(!show)
+
+  const MenuItems = ({ children }) => (
+    <Text 
+      mt={{ base: 4, md: 0 }}
+      ml={5} 
+      display="block"
+      fontSize={{ sm: show ? "21px" : "", md: '14px'}}
+    >
+      {children}
+    </Text>
+  );
 
   return (
     <Menu>
@@ -36,12 +42,19 @@ export default function NavBar(props) {
         align="center"
         justify="space-between"
         wrap="wrap"
-        // h={{ sm: show ? "100vh" : ""}}
+        position={{ base:"block", sm: show ? "relative" : ""}}
+        h={{ sm: show ? "100vh" : "", md: "60px"}}
         bg={{lg: "transparent",md: 'transparent', sm: show ? "#200E64" : "transparent"}}
         color="#FFFFFF"
         {...props}
       >
-        <Flex align="center" ml={3} p={['1.5rem']}>
+        <Flex 
+          align="center" 
+          ml={3} 
+          p={['1.5rem']}
+          position={{ sm: show ? "relative" : ""}}
+          bottom={{ sm: show ? "145px" : ""}}
+        >
           <Box>
             <Image
               src='/assets/logo.svg'
@@ -52,7 +65,12 @@ export default function NavBar(props) {
             />
           </Box>
         </Flex>
-        <Box className={styles.box__first} p={['1.5rem']} >
+        <Box 
+          className={styles.box__first} 
+          p={['1.5rem']} 
+          position={{ sm: show ? "relative" : ""}}
+          bottom={{ sm: show ? "145px" : ""}}
+          >
           <Box display={{ base: "block", md: "none" }}>
             <IconButton
               onClick={handleToggle}
@@ -79,10 +97,12 @@ export default function NavBar(props) {
           flexGrow={1}
           justifyContent={{ md: "space-evenly"}}
           mb={3}
+          position={{ sm: show ? "relative" : ""}}
+          bottom={{ sm: show ? "230px" : ""}}
         >
             <MenuItems>How it works</MenuItems>
             <MenuItems>About us</MenuItems>
-            <MenuItems><ModalComponent/></MenuItems>
+            <Box mt={{ base: 4, md: 0 }}><ModalComponent/></Box>
         </Box>
   
       </Flex>

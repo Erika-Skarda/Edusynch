@@ -33,9 +33,9 @@ export default function ModalComponent() {
   const eye = <FontAwesomeIcon icon={faEye} />
   const eyeSlash = <FontAwesomeIcon icon={faEyeSlash} />
 
-  const [passwordShown, setPasswordShown] = useState(false);
+  const [passwordShown, setPasswordShown] = useState(false)
   const togglePasswordVisibility = () => {
-    setPasswordShown(passwordShown ? false : true);
+    setPasswordShown(passwordShown ? false : true)
   };
 
   const { register, handleSubmit } = useForm()
@@ -109,7 +109,6 @@ export default function ModalComponent() {
           <ModalFooter>
             <ButtonComponent text={"LOGIN"} sm={true} onClick={handleSubmit(onSubmit)}/>
           </ModalFooter>
-
         </ModalContent>
       </Modal>
     </>

@@ -13,6 +13,12 @@
 }
   @media(max-width: 768px) {
     .box__second {
+     display: none
+    }
+  } 
+
+  @media(max-width: 768px) {
+    .box__second__mobile {
       width: 100%;
       margin: 0;
       background-color: white;
@@ -22,6 +28,7 @@
     }
   } 
   
+  
   .box__icon {
     color: var(--icon);
   }
@@ -29,6 +36,10 @@
     .box__icon {
      display: none
     }
+
+    .box__icon:hover {
+      color: var(--primary);
+    } 
   } 
 
   .box__img {

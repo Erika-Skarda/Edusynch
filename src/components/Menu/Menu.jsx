@@ -1,9 +1,17 @@
 import React, { useState } from "react";
 import Image from 'next/image'
+import { useDisclosure } from "@chakra-ui/react"
 import { 
         Box,  
         Flex, 
         Text, 
+        Drawer,
+        DrawerBody,
+        DrawerFooter,
+        DrawerHeader,
+        DrawerOverlay,
+        DrawerContent,
+        DrawerCloseButton,
 } from "@chakra-ui/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
@@ -25,6 +33,8 @@ export default function Menu(props) {
 
   const [show, setShow] = useState(false)
   const handleToggle = () => setShow(!show)
+
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <>
@@ -62,7 +72,7 @@ export default function Menu(props) {
           <Box display={{ base: "block", md: "none" }} onClick={handleToggle}>
             {show 
               ? <i className={styles.box__icon}>{arrowUp}</i> 
-              : <i className={styles.box__icon}>{arrowDown}</i>
+              : <i className={styles.box__icon} onClick={onOpen}>{arrowDown}</i>
             }
           </Box>
           <Box display={{ base: "block", md: "none" }}>
@@ -74,7 +84,7 @@ export default function Menu(props) {
             />
           </Box>
         </Box>
-
+        
         <Box
           display={{ sm:"none", md: "flex" }}
           width={{ sm: "full", md: "auto" }}
@@ -83,16 +93,17 @@ export default function Menu(props) {
         >
           <MenuItems>My Classes</MenuItems>
         </Box>
-        
+
         <Box
-          display={{ sm: show ? "flex" : "none", md: "flex" }}
-          // mt={{ base: 4, md: 0 }}
+          display={{  md: "flex" }}
           p={['1.5rem']}
           className={styles.box__second}
         >
+      
           <button className={styles.box__button}>
-            CHANGE TO TEACHER MODE <i className={styles.box__icon}>{arrowRight}</i>
+            CHANGE TO TEACHER MODE
           </button>
+    
           <Box display={{ sm: "none", md: "flex" }} >
             <img 
               src="https://github.com/Erika-Skarda.png" 
@@ -102,7 +113,33 @@ export default function Menu(props) {
             <div className={styles.box__dot}></div>
           </Box>
         </Box>
-        
+
+
+        <Drawer placement={"top"} onClose={onClose} isOpen={isOpen}>
+          <DrawerOverlay bg={'rgba(255, 255, 255, 0.80)'} mt={'75px'}>
+            <DrawerContent mt={'75px'}> 
+              <Box
+                display={{ sm: show ? "flex" : "none" }}
+                p={['1.5rem']}
+                className={styles.box__second__mobile}
+              >
+             
+                  <button className={styles.box__button}>
+                    CHANGE TO TEACHER MODE <i className={styles.box__icon}>{arrowRight}</i>
+                  </button>
+          
+                <Box display={{ sm: "none", md: "flex" }} >
+                  <img 
+                    src="https://github.com/Erika-Skarda.png" 
+                    alt="Erika" 
+                    className={styles.box__img}
+                  />
+                  <div className={styles.box__dot}></div>
+                </Box>
+              </Box>
+            </DrawerContent>
+          </DrawerOverlay> 
+        </Drawer> 
       </Flex>
     </>
   );

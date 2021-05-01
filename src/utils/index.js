@@ -1,16 +1,11 @@
-import { useState, useEffect } from 'react'
-import firebase from '../../config/firebase/firebaseConnection'
-
-import Card from '../Card/Card'
-
-console.disableYellowBox=true;
-
-export default function Main () {
-
+export async function getStaticProps(context) {
+  
+  
   const [card, setCard] = useState()
   const [teachers, setTeachers] = useState([])
 
   useEffect(() => {
+    
     async function data() {
       let teachers =  await firebase.database().ref('Teachers')
       let key = (await teachers.push()).key
@@ -37,19 +32,20 @@ export default function Main () {
             star: childItem.val().star,
             lessons: childItem.val().lessons
           }
-          setTeachers(oldArray => [...oldArray, newTeacher].reverse())
+          setTeachers(oldArray => [...oldArray, newTeacher ])
         })
       })
     }
     list()
   }, [])
 
-  console.log("Professores", teachers)
-  return (
-    <>
-      <Card items={teachers} setItems={setTeachers} />
-    </>
-  )
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+
+  return {
+    props: { data }, // will be passed to the page component as props
+  }
 }
-
-
